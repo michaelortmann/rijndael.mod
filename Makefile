@@ -40,6 +40,5 @@ rijndael.o: .././rijndael.mod/rijndael.c ../../../src/mod/module.h \
  ../../../src/flags.h ../../../src/cmdt.h ../../../src/tclegg.h \
  ../../../src/tclhash.h ../../../src/chan.h ../../../src/users.h \
  ../../../src/compat/compat.h ../../../src/compat/snprintf.h \
- ../../../src/compat/strlcpy.h ../../../src/mod/modvals.h \
- ../../../src/tandem.h .././rijndael.mod/rijndael.h \
+ ../../../src/mod/modvals.h ../../../src/tandem.h .././rijndael.mod/rijndael.h \
  .././rijndael.mod/aes.h
