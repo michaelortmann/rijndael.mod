@@ -1,11 +1,9 @@
 /*
- * blowfish.h -- part of blowfish.mod
- *
- * $Id: blowfish.h,v 1.6 2001/04/12 02:39:44 guppy Exp $
+ * blowfish.h -- part of rijndael.mod
  */
 /*
  * Copyright (C) 1997 Robey Pointer
- * Copyright (C) 1999, 2000, 2001 Eggheads Development Team
+ * Copyright (C) 1999 - 2023 Eggheads Development Team
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -25,5 +23,4 @@
 #ifndef _EGG_MOD_TWOFISH_BLOWFISH_H
 #define _EGG_MOD_TWOFISH_BLOWFISH_H
 
-
-#endif				/* _EGG_MOD_BLOWFISH_BLOWFISH_H */
+#endif /* _EGG_MOD_BLOWFISH_BLOWFISH_H */
