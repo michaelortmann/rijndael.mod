@@ -757,7 +757,7 @@ switch(nc) \
 #endif
 #endif
 
-cf_dec c_name(encrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *cx)
+cf_dec c_name(ncrypt)(const byte in_blk[], byte out_blk[], const c_name(aes) *cx)
 {   word        locals(b0, b1);
     const word  *kp = cx->e_key;
 
