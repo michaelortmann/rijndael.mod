@@ -1,5 +1,3 @@
-/* This version is modified by pseudo@egg6.net to run on Eggdrop 1.8 */
-
 #define MODULE_NAME "encryption"
 #define MAKING_ENCRYPTION
 
@@ -264,8 +262,8 @@ char *rijndael_start(Function *global_funcs)
     if (!module_rename("rijndael", MODULE_NAME))
       return "Already loaded.";
 
-    module_register(MODULE_NAME, rijndael_table, 2, 1);
-    if (!module_depend(MODULE_NAME, "eggdrop", 108, 0)) {
+    module_register(MODULE_NAME, rijndael_table, 2, 2);
+    if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
       module_undepend(MODULE_NAME);
       return "This module requires eggdrop1.8.0 or later";
     }
