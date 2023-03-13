@@ -1,3 +1,5 @@
+2.3
+- Cleanup (Michael Ortmann)
 2.2
 - Fix symbol lookup error: /home/michael/eggdrop/modules/rijndael.so: undefined symbol: ncrypt (Michael Ortmann)
 - Now also works with eggdrop 1.8.4. (Michael Ortmann)

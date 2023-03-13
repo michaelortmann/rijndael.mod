@@ -23,8 +23,8 @@ static int rijndael_expmem()
 static void rijndael_report(int idx, int details)
 {
   if (details) {
-    dprintf(idx, "    Rijndael encryption module:\n");
-    dprintf(idx, "    Thanks for using Rijndael! You rock!\n\n");
+    dprintf(idx, "    Rijndael encryption module:\n"
+                 "    Thanks for using Rijndael! You rock!\n");
   }
 }
 
@@ -102,12 +102,12 @@ static char *encrypt_string(char *key, char *str)
 	int i, j, k;
 
 	k = strlen(str);
-	input_ = (char *)nmalloc(k+BLOCK_SIZE/8+1);
+	input_ = nmalloc(k+BLOCK_SIZE/8+1);
 	memcpy(input_, str, k);
 	memset(input_+k, 0, BLOCK_SIZE/8+1);
 	if ((!key) || (!key[0])) return(input_);
 
-	output_ = (char *)nmalloc((k + BLOCK_SIZE/8 + 1) * 2);
+	output_ = nmalloc((k + BLOCK_SIZE/8 + 1) * 2);
 
 	input = input_;
 	output = output_;
@@ -139,12 +139,12 @@ static char *decrypt_string(char *key, char *str)
 	int i, j, k;
 
 	i = strlen(str);
-	input_ = (char *)nmalloc(i + BLOCK_SIZE/8+21);
+	input_ = nmalloc(i + BLOCK_SIZE/8+21);
 	memcpy(input_, str, i);
 	memset(input_+i, 0, BLOCK_SIZE/8+21);
 	if ((!key) || (!key[0])) return(input_);
 
-	output_ = (char *) nmalloc(i + BLOCK_SIZE/8+21);
+	output_ = nmalloc(i + BLOCK_SIZE/8+21);
 	memset(output_, 0, i+BLOCK_SIZE/8+21);
 
 	rijndael_init(key, strlen(key));
@@ -262,7 +262,7 @@ char *rijndael_start(Function *global_funcs)
     if (!module_rename("rijndael", MODULE_NAME))
       return "Already loaded.";
 
-    module_register(MODULE_NAME, rijndael_table, 2, 2);
+    module_register(MODULE_NAME, rijndael_table, 2, 3);
     if (!module_depend(MODULE_NAME, "eggdrop", 108, 0)) {
       module_undepend(MODULE_NAME);
       return "This module requires Eggdrop 1.8.0 or later.";
