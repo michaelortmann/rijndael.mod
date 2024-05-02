@@ -262,10 +262,10 @@ char *rijndael_start(Function *global_funcs)
     if (!module_rename("rijndael", MODULE_NAME))
       return "Already loaded.";
 
-    module_register(MODULE_NAME, rijndael_table, 2, 3);
-    if (!module_depend(MODULE_NAME, "eggdrop", 108, 0)) {
+    module_register(MODULE_NAME, rijndael_table, 2, 4);
+    if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
       module_undepend(MODULE_NAME);
-      return "This module requires Eggdrop 1.8.0 or later.";
+      return "This module requires Eggdrop 1.8.4 or later.";
     }
     add_hook(HOOK_ENCRYPT_PASS, (Function) rijndael_encrypt_pass);
     add_hook(HOOK_ENCRYPT_STRING, (Function) encrypt_string);
